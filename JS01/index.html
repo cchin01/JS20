@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="quote-container">
+      <span class="animation"></span>
+      <!-- Quote -->
+      <div class="quote-text">
+        <i class="fas fa-quote-left" id="fas"></i>
+        <span id="quote"
+          >Do you want to take a leap of faith or become an old man filled with
+          regret waiting to die alone !!! Saito: Do you want to take a leap of
+          faith or become an old man filled with regret waiting to die
+          alone!</span
+        >
+      </div>
+
+      <hr id="split-line" />
+
+      <!-- Author -->
+      <div class="quote-author">
+        <span id="author">Inception</span>
+      </div>
+
+      <!-- Button -->
+      <div class="button-container">
+        <button class="twitter-button" id="twitter" title="Tweet This!">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button id="new-quote">New Quote</button>
+      </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader cssload-loader">
+      <div class="cssload-inner cssload-one"></div>
+      <div class="cssload-inner cssload-two"></div>
+      <div class="cssload-inner cssload-three"></div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
