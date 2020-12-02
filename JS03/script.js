@@ -1,5 +1,6 @@
 const videoElement = document.querySelector("#video");
-const button = document.querySelector("#button");
+const buttonSelect = document.querySelector("#button-select");
+const buttonPlay = document.querySelector("#button-play");
 
 //prompt to select media stream and pass to media element
 async function selectMediaStream() {
@@ -14,13 +15,32 @@ async function selectMediaStream() {
   }
 }
 
-button.addEventListener("click", async () => {
+buttonPlay.addEventListener("click", async () => {
   //Disable Button
-  button.disabled = true;
+  buttonPlay.disabled = true;
   // Start picture in picture
   await videoElement.requestPictureInPicture();
   //Reset Button
-  button.disabled = false;
+  buttonPlay.disabled = false;
 });
+
+function stopCapture() {
+  let tracks = videoElement.srcObject.getTracks();
+
+  tracks.forEach((track) => track.stop());
+  videoElement.srcObject = null;
+}
+
+buttonSelect.addEventListener("click", selectMediaStream);
+window.addEventListener(
+  "keydown",
+  (e) => {
+    if (e.key == "Escape") {
+      stopCapture();
+      console.log("esc");
+    }
+  },
+  false
+);
 
 selectMediaStream();
